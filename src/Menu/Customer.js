@@ -6,6 +6,11 @@ return(
     <Card className='mb3'>
         <CardBody>
             <CardTitle>Customer Menu</CardTitle>
+            <div>
+                <Button>
+                    Add Customer
+                </Button>
+            </div>
             <Button variant='primary' onClick={onBackToMenu} >
                 Back To Main Menu
             </Button>

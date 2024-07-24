@@ -61,18 +61,18 @@ const MainMenu = () => {
         <Card.Title>Main Menu</Card.Title>
         <div className="button-Menu">
           <Button variant="primary" onClick={handleCategory} className="mb-2">
-            Kategori
+            Category
           </Button>
           <Button variant="primary" onClick={handleVehicle} className="mb-2">
-            Araç
+            Vehlice
           </Button>
         </div>
         <div className="button-Menu">
           <Button variant="primary" onClick={handleListing} className="mb-2">
-            Listeleme
+            listing
           </Button>
           <Button variant="primary" onClick={handleCustomer} className="mb-2">
-            Müşteri
+            Customer
           </Button>
         </div>
       </Card.Body>
