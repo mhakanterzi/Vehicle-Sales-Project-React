@@ -4,29 +4,22 @@ import { Button, Card, CardBody, CardTitle, Form, FormControl, FormGroup, FormLa
 const EditCategory = ({ onBackToMenu }) => {
     const[editCategories, setEditCategories] = useState([]);
     const[newCategory, setNewCategory] = useState(' ');
-    const[selectedCategory, setSelectedCategory] = useState(' ');
+    const[selectedCategory, setSelectedCategory] = useState([]);
 
     useEffect( () => {
         const storedCategories =JSON.parse(localStorage.getItem('cat')) || [];
         setEditCategories(storedCategories)
-    } ) ;
+    },[]) ;
 
     const handleEditCategory = (e) =>{
         e.preventDefault();
 
-        const CatExist = editCategories.some(cat => cat.category === newCategory);
-        if (CatExist) {
-            alert("Category Already Exist");
-            return;
-        }
-        else{
         const updateCategories = editCategories.map(cat => 
             cat.category === selectedCategory ? {...cat, category : newCategory} : cat);
         localStorage.setItem('cat', JSON.stringify(updateCategories));
         setEditCategories(updateCategories);
         setSelectedCategory('');
         setNewCategory('');
-    }
 }
     const handleSelectedCategory = (category) => {
         setSelectedCategory(category);
