@@ -25,7 +25,7 @@ const AddCategory = ({ onBackToMenu, Category }) => {
 
     
 return(
-    <Card className='mb3'>
+    <Card>
         
         <CardBody>
             <CardTitle>Stored Categories</CardTitle>
