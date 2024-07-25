@@ -7,7 +7,7 @@ const DeleteCategory = ({ onBackToMenu }) => {
     useEffect( () => {
         const storedCategories =JSON.parse(localStorage.getItem('cat')) || [];
         setShowCategories(storedCategories);
-    })
+    }, [])
 
     const handleDeleteCategory = (categoryToDelete) =>{
         const updateCategories = showCategories.filter(cat => cat.category !== categoryToDelete);
