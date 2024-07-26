@@ -62,7 +62,7 @@ const AddVehicle = ({ onBackToMenu, setAddVehicle }) => {
                         </div>
                     </Form>
 
-                <Button variant="primary" onClick={onBackToMenu}>
+                <Button style={{display: 'flex' ,height:'60px', width:'160px', marginLeft:'100px' }} variant="primary" onClick={onBackToMenu}>
                     Back To Vehicle Menu
                 </Button>
                 </CardBody>
