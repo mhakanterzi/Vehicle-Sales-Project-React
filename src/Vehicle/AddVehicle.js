@@ -19,7 +19,7 @@ const AddVehicle = ({ onBackToMenu, setAddVehicle }) => {
     useEffect (() =>{
         const storedCategory =JSON.parse(localStorage.getItem('cat')) || []
         setCategory(storedCategory);
-    })
+    },[])
 
     const handleAddVehicle = (e) => {
         e.preventDefault();
