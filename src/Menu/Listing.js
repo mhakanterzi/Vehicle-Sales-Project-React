@@ -8,15 +8,20 @@ return(
             <CardTitle>Listing Menu</CardTitle>
             <div className='button-Menu'>
                 <Button>
-                    On Sale Cars
+                    On Sale Vehicles
                 </Button>
                 <Button>
-                    Saled Cars
+                    Saled Vehicles
                 </Button>
             </div>
-            <Button  variant='primary' onClick={onBackToMenu} style={{ marginLeft: '95px' ,height: '60px' ,width:'160px' }}>
+            <div className='button-Menu'>
+                <Button>
+                    All Vehicles
+                </Button>
+                <Button  variant='primary' onClick={onBackToMenu} >
              Back To Main Menu
             </Button>
+            </div>
         </CardBody>
     </Card>
 )
