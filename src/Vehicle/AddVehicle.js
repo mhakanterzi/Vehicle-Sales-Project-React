@@ -7,11 +7,19 @@ const AddVehicle = ({ onBackToMenu, setAddVehicle }) => {
     const [year, setYear] = useState(' ');
     const [plate, setPlate] = useState(' ');
     const [showVehicle, setShowVehicle] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const[ category, setCategory] = useState([]);
+
 
     useEffect (() => {
         const addedVehicle =JSON.parse(localStorage.getItem('vehicle')) || []
         setShowVehicle(addedVehicle);
     }, [])
+
+    useEffect (() =>{
+        const storedCategory =JSON.parse(localStorage.getItem('cat')) || []
+        setCategory(storedCategory);
+    })
 
     const handleAddVehicle = (e) => {
         e.preventDefault();
@@ -20,16 +28,21 @@ const AddVehicle = ({ onBackToMenu, setAddVehicle }) => {
         if(vehicleExist){
             alert('Vehicle ALrady Exist')
         }else{
-            vehicle.push({brand, model, year, plate});
+            vehicle.push({category: selectedCategory, brand, model, year, plate});
             localStorage.setItem('vehicle', JSON.stringify(vehicle));
             alert('Vehicle Added Succesfuly');
             setShowVehicle(vehicle);  
+            setSelectedCategory('')
             setBrand('');             
             setModel('');
             setYear('');
             setPlate('');
         }
     }
+
+    const SelectChange = (e) => { 
+        setSelectedCategory(e.target.value);
+    };
 
 
     return(
@@ -41,6 +54,15 @@ const AddVehicle = ({ onBackToMenu, setAddVehicle }) => {
                         ))}
                     </ul>
                 </CardBody>
+                <FormGroup controlId="forCategory">
+                        <FormLabel>Select Category</FormLabel>
+                        <FormControl as="select" value={selectedCategory} onChange={SelectChange} required>
+                            <option value="">Select a category</option>
+                            {category.map((cat, index) => (
+                                <option key={index} value={cat.category}>{cat.category}</option>
+                            ))}
+                        </FormControl>
+                    </FormGroup>
                 <CardBody>
                     <CardTitle>Add Vehicle</CardTitle>
                     <Form onSubmit={handleAddVehicle}>
