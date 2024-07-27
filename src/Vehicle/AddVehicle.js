@@ -23,6 +23,11 @@ const AddVehicle = ({ onBackToMenu, setAddVehicle }) => {
             vehicle.push({brand, model, year, plate});
             localStorage.setItem('vehicle', JSON.stringify(vehicle));
             alert('Vehicle Added Succesfuly');
+            setShowVehicle(vehicle);  
+            setBrand('');             
+            setModel('');
+            setYear('');
+            setPlate('');
         }
     }
 

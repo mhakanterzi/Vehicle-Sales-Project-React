@@ -19,6 +19,7 @@ const AddCategory = ({ onBackToMenu, Category }) => {
             cat.push({category});
             localStorage.setItem('cat', JSON.stringify(cat));
             alert('Added Category');
+            setShowCategories(cat)
             SetCategory(' ');
         }
     }
