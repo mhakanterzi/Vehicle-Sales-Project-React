@@ -85,7 +85,7 @@ const EditCustomer =({onBackToMenu}) =>{
                             <FormGroup controlId="forNewEmail">
                                 <FormLabel>Email</FormLabel>
                                 <FormControl
-                                    type="text"
+                                    type="email"
                                     value={newEmail}
                                     onChange={(e) => setNewEmail(e.target.value)}
                                     required
