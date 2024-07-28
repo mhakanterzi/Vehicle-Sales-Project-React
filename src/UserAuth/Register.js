@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Form, Button, Card } from 'react-bootstrap';
+import { Form, Button, Card, FormGroup, FormLabel, FormControl } from 'react-bootstrap';
 
 
 const Register = ({ setShowRegister }) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState('')
+  const[surname, setSurname]= useState('')
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const[phone, setPhone]= useState('')
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -14,7 +16,7 @@ const Register = ({ setShowRegister }) => {
     if (userExists) {
       alert('User already exists');
     } else {
-      users.push({ name, email, password });
+      users.push({ name,surname, phone, email, password });
       localStorage.setItem('users', JSON.stringify(users));
       alert('Registration successful');
       setShowRegister(false);
@@ -36,6 +38,24 @@ const Register = ({ setShowRegister }) => {
               required
             />
           </Form.Group>
+          <FormGroup>
+            <FormLabel>Surname</FormLabel>
+            <FormControl 
+            type='text'
+            value={surname}
+            onChange={(e) => setSurname(e.target.value)}
+            required
+            />
+          </FormGroup>
+          <FormGroup>
+            <FormLabel>Phone</FormLabel>
+            <FormControl 
+            type='number'
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+            />
+          </FormGroup>
           <Form.Group controlId="formEmail">
             <Form.Label>Email</Form.Label>
             <Form.Control
