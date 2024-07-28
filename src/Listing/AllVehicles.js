@@ -46,14 +46,14 @@ const AllVehicles = ({onBackToMenu}) =>{
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.model}</div>
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.year}</div>
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.plate}</div>
-                            <Button variant='link'  onClick={() => setSelectedVehicle(vehicle)}>
+                            <Button variant='link' style={{ color: 'green'}}  onClick={() => setSelectedVehicle(vehicle)}>
                                 Sale
                             </Button>
                         </div>
                     </li>
                     ))}
                 </ul>
-                <Button onClick={onBackToMenu}>
+                <Button  onClick={onBackToMenu} style={{display: 'flex' ,height:'60px', width:'160px', marginLeft:'220px' }}>
                     Back To Listing Menu
                 </Button>
                 {selectedVehicle && 

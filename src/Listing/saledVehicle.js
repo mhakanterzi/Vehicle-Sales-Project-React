@@ -25,7 +25,6 @@ const SaledVehicle = ({onBackToMenu}) =>{
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Category</div>
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Brand</div>
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Model</div>
-                    <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Model</div>
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Year</div>
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Plate</div>
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Price</div>
@@ -48,7 +47,7 @@ const SaledVehicle = ({onBackToMenu}) =>{
                     </li>
                     ))}
                 </ul>
-                <Button onClick={onBackToMenu}>
+                <Button onClick={onBackToMenu} style={{display: 'flex' ,height:'60px', width:'160px', marginLeft:'350px' }}>
                     Back To Listing Menu
                 </Button>
             </CardBody>

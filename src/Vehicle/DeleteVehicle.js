@@ -39,7 +39,7 @@ const DeleteVehicle = ({onBackToMenu}) =>{
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.model}</div>
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.year}</div>
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.plate}</div>
-                            <Button onClick={() => handleDeleteVehicle(vehicle)}>
+                            <Button variant='danger' onClick={() => handleDeleteVehicle(vehicle)}>
                                 Delete
                             </Button>
                         </div>

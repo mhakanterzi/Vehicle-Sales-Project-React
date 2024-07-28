@@ -82,16 +82,16 @@ const AddVehicle = ({ onBackToMenu, setAddVehicle }) => {
                             <FormLabel>Plate</FormLabel>
                         <FormControl type="text" value={plate} onChange={(e) => setPlate(e.target.value)} required/>
                         </FormGroup>
-                        <div className="button-Menu">
-                            <Button type="submit">
+                        <div className="button-Menu" style={{marginLeft : '8px' , marginTop: '20px'}}>
+                            <Button   type="submit" >
                                 Add Vehicle
                             </Button>
+                            <Button  variant="primary" onClick={onBackToMenu}>
+                                Back To Vehicle Menu
+                            </Button>   
                         </div>
                     </Form>
 
-                <Button style={{display: 'flex' ,height:'60px', width:'160px', marginLeft:'100px' }} variant="primary" onClick={onBackToMenu}>
-                    Back To Vehicle Menu
-                </Button>
                 </CardBody>
         </Card>
     );

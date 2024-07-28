@@ -40,14 +40,14 @@ const DeleteCustomer =({onBackToMenu}) =>{
                             <div  style={{ flex: 1, textAlign: 'center' }}>{user.surname}</div>
                             <div  style={{ flex: 1, textAlign: 'center' }}>{user.phone}</div>
                             <div  style={{ flex: 1, textAlign: 'center' }}>{user.email}</div>
-                                <Button onClick={() => deleteCustomer(user)}>
+                                <Button variant='danger' onClick={() => deleteCustomer(user)}>
                                     Delete
                                 </Button>
                         </div>
                     </li>
                     ))}
                 </ul>
-                <Button onClick={onBackToMenu}>
+                <Button onClick={onBackToMenu} style={{display: 'flex' ,height:'60px', width:'160px', marginLeft:'210px' }}>
                     Back To Customer Menu
                 </Button>
             </CardBody>

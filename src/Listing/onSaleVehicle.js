@@ -43,7 +43,6 @@ const OnSaleVehicle = ({onBackToMenu}) =>{
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Category</div>
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Brand</div>
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Model</div>
-                    <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Model</div>
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Year</div>
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Plate</div>
                     <div style={{display:'flex', justifyContent :'space-between', alignItems:'center'}}>Price</div>
@@ -60,7 +59,7 @@ const OnSaleVehicle = ({onBackToMenu}) =>{
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.year}</div>
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.plate}</div>
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.price}</div>
-                            <Button onClick={() => addOnSaled(vehicle, vehicle.price)}>
+                            <Button variant='link' style={{ color: 'green'}} onClick={() => addOnSaled(vehicle, vehicle.price)}>
                                 Saled
                             </Button>
                             <Button  variant='danger' onClick={() => handleDeleteVehicle(vehicle)}>
@@ -70,7 +69,7 @@ const OnSaleVehicle = ({onBackToMenu}) =>{
                     </li>
                     ))}
                 </ul>
-                <Button onClick={onBackToMenu}>
+                <Button onClick={onBackToMenu} style={{display: 'flex' ,height:'60px', width:'160px', marginLeft:'340px' }}>
                     Back To Listing Menu
                 </Button>
             </CardBody>

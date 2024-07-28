@@ -31,7 +31,7 @@ const DeleteCategory = ({ onBackToMenu }) => {
                         </li>
                     ) )}
                 </ul>
-                <Button onClick={onBackToMenu}>
+                <Button style={{display: 'flex' ,height:'60px', width:'160px', marginLeft:'100px' }} onClick={onBackToMenu}>
                     Back To Category Menu
                 </Button>
 
