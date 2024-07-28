@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Button, Card, CardBody, CardTitle } from 'react-bootstrap';
 import AllVehicles from '../Listing/AllVehicles';
 import OnSaleVehicle from '../Listing/OnSaleVehicle';
+import SaledVehicle from '../Listing/SaledVehicle'
 
 const Listing = ({onBackToMenu}) =>{
     const[allVehicle, setAllVehicle]= useState(false);
     const[onSaleVehicles, setOnSaleVehicles]= useState(false);
+    const[saledVehicle, setSaledVehicle]=useState(false);
 
     const handleAllVehicle = () =>{
         setAllVehicle(true);
@@ -27,6 +29,17 @@ const Listing = ({onBackToMenu}) =>{
         return <OnSaleVehicle onBackToMenu={handleOnSaleVehicleBack}/>
     }
 
+
+    const handleSaledVehicle =()=>{
+        setSaledVehicle(true)
+    }
+    const handleSaledVehicleBack =() =>{
+        setSaledVehicle(false)
+    }
+    if(saledVehicle){
+        return <SaledVehicle  onBackToMenu={handleSaledVehicleBack}/>
+    }
+
 return(
     <Card>
         <CardBody>
@@ -35,7 +48,7 @@ return(
                 <Button onClick={handleOnSaleVehicle}>
                     On Sale Vehicles
                 </Button>
-                <Button>
+                <Button onClick={handleSaledVehicle}>
                     Saled Vehicles
                 </Button>
             </div>

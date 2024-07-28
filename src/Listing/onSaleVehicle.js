@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from "react";
 import { Button, Card, CardBody, CardTitle } from "react-bootstrap";
 
@@ -15,6 +14,22 @@ const OnSaleVehicle = ({onBackToMenu}) =>{
             vehicle.brand !== vehicleToDelete.brand ||
             vehicle.model !== vehicleToDelete.model ||
             vehicle.year !== vehicleToDelete.year
+            );
+        localStorage.setItem('vehicleOnSale', JSON.stringify(selectedVehicle));
+        setOnSale(selectedVehicle);
+    }
+
+    const addOnSaled = (vehicle, price) =>{
+        const saledVehicles = JSON.parse(localStorage.getItem('SaledVehicle')) || [];
+        const vehicleWithPrice = { ...vehicle, price };
+        saledVehicles.push(vehicleWithPrice);
+        localStorage.setItem('SaledVehicle', JSON.stringify(saledVehicles));
+
+        const selectedVehicle = onSale.filter(v => 
+            v.plate !== vehicle.plate ||
+            v.brand !== vehicle.brand ||
+            v.model !== vehicle.model ||
+            v.year !== vehicle.year
             );
         localStorage.setItem('vehicleOnSale', JSON.stringify(selectedVehicle));
         setOnSale(selectedVehicle);
@@ -45,7 +60,7 @@ const OnSaleVehicle = ({onBackToMenu}) =>{
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.year}</div>
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.plate}</div>
                             <div  style={{ flex: 1, textAlign: 'center' }}>{vehicle.price}</div>
-                            <Button /*onClick={() => handleDeleteVehicle(vehicle)}*/>
+                            <Button onClick={() => addOnSaled(vehicle, vehicle.price)}>
                                 Saled
                             </Button>
                             <Button  variant='danger' onClick={() => handleDeleteVehicle(vehicle)}>
